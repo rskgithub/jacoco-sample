@@ -82,33 +82,34 @@
             <classpath location="${classes.dir}" />
             <classpath refid="classpath" />
             <formatter type="xml" />
-            <batchtest todir="${reports.junit.xml.dir}">
+            <batchtest  fork="true" todir="${reports.junit.xml.dir}">
               <fileset dir="${test.dir}">
                 <include name="**/*Test.java" />
               </fileset>
             </batchtest>
           </junit>
         </jacoco:coverage>
+
+        <jacoco:report>
+          <executiondata>
+              <file file="target/jacoco.exec"/>
+          </executiondata>
+
+          <structure name="jacoco-sample">
+              <classfiles>
+                  <fileset dir="${classes.dir}"/>
+              </classfiles>
+              <sourcefiles encoding="UTF-8">
+                  <fileset dir="${src.dir}"/>
+              </sourcefiles>
+          </structure>
+          <html destdir="${build.dir}/coverage-report"/>
+        </jacoco:report>
     </target>
 
-    <target name="report" depends="test">
-      <jacoco:report>
-        <executiondata>
-            <file file="target/jacoco.exec"/>
-        </executiondata>
+    <target name = "check" depends = "test">
 
-        <structure name="jacoco-sample">
-            <classfiles>
-                <fileset dir="${classes.dir}"/>
-            </classfiles>
-            <sourcefiles encoding="UTF-8">
-                <fileset dir="${src.dir}"/>
-            </sourcefiles>
-        </structure>
-        <html destdir="${build.dir}/coverage-report"/>
-      </jacoco:report>
     </target>
-
 
     <!-- ========= Define Sonar target ========= -->
     <target name="sonar" depends="compile">

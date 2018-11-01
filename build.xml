@@ -37,10 +37,6 @@
 
     <!-- ========= Define "regular" targets: clean, compile, test, ... ========= -->
 
-	<taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
-                <classpath path="lib/jacocoant.jar"/>
-        </taskdef>
-
     <target name="clean">
         <delete dir=".sonar" />
         <delete dir="${build.dir}" />

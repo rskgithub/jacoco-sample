@@ -128,7 +128,7 @@
 	</taskdef>
 
         <!-- Execute Sonar -->
-         <sonar:sonar key="${sonar.projectKey}" version="0.1-SNAPSHOT"  xmlns:sonar="antlib:org.sonar.ant"/>
+         <sonar:sonar />
     </target>
 
     <!-- ========= The main target "all" ========= -->

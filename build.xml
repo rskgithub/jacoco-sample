@@ -11,13 +11,14 @@
     <property name="reports.junit.xml.dir" value="${reports.dir}/junit" />
 
     <!-- Define the Sonar properties -->
-
+    <!--
     <property name="sonar.jdbc.url" value="jdbc:mysql://localhost:3306/sonar332?useUnicode=true&amp;characterEncoding=utf8" />
         <property name="sonar.jdbc.driverClassName" value="com.mysql.jdbc.Driver" />
 
         <!-- the username and password of your database -->
-        <property name="sonar.jdbc.username" value="root" />
-        <property name="sonar.jdbc.password" value="password" />
+        <!-- <property name="sonar.jdbc.username" value="root" /> -->
+        <!-- <property name="sonar.jdbc.password" value="password" /> -->
+   
 
     <property name="sonar.projectKey" value="org.codehaus.sonar:example-ut-ant-jacoco-runTests" />
     <property name="sonar.projectName" value="UT coverage with Ant and JaCoCo running tests" />
@@ -123,7 +124,7 @@
     <target name="sonar" depends="compile">
         <taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
             <!-- Update the following line, or put the "sonar-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
-            <classpath path="./lib/sonar-ant-task-2.2.jar" />
+            <classpath path="./lib/sonarqube-ant-task-2.5.jar" />
 	</taskdef>
 
         <!-- Execute Sonar -->

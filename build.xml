@@ -50,7 +50,7 @@
         <mkdir dir="${reports.junit.xml.dir}" />
     </target>
 
-    <target name="compile" depends="init">
+    <target name="compile" depends="init" debug="true">
         <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath"  />
         <javac srcdir="${test.dir}" destdir="${classes.dir}" classpathref="classpath" />
     </target>

@@ -70,8 +70,7 @@
 
         <!-- Import the JaCoCo Ant Task -->
         <taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
-          <!--<classpath path="${build.dir}/lib/jacocoant.jar"/> -->
-	     
+          <classpath path="${build.dir}/lib/jacocoant.jar"/>	     
         </taskdef>
 
         <!-- Run your unit tests, adding the JaCoCo agent -->
@@ -121,10 +120,8 @@
     <target name="sonar" depends="compile">
         <taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
             <!-- Update the following line, or put the "sonar-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
-            <!--<classpath path="${build.dir}/lib/sonarqube-ant-task-2.5.jar" />-->
-	    <classpath>
-                <path refid="classpath"/>
-            </classpath>
+            <classpath path="${build.dir}/lib/sonarqube-ant-task-2.5.jar" />
+	    
 	</taskdef>
 
         <!-- Execute Sonar -->

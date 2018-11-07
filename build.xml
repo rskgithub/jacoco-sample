@@ -63,10 +63,10 @@
     <target name="test" depends="compile">
 
         <taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask">
-            <!-- <classpath>
+            <classpath>
                 <path refid="classpath"/>
-            </classpath> -->
-	    <classpath path="lib/ant-junit4.jar"/>
+            </classpath>
+	    
         </taskdef>
 
         <!-- Import the JaCoCo Ant Task -->

@@ -66,7 +66,7 @@
             <!-- <classpath>
                 <path refid="classpath"/>
             </classpath> -->
-	    <classpath path="lib/junit-4.10.jar"/>
+	    <classpath path="lib/ant-junit4.jar"/>
         </taskdef>
 
         <!-- Import the JaCoCo Ant Task -->
